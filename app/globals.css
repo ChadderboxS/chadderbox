@@ -94,11 +94,11 @@
 }
 .pdf-mode .print-pdf\:block {
   display: block !important;
-  
-  body {
-    color: black;
-    font-size: 12pt;
-  }
+}
+
+.pdf-mode .print-pdf\:text-black {
+  color: black !important;
+  font-size: 12pt;
 
   .container {
     max-width: 100% !important;
@@ -106,8 +106,15 @@
     margin: 0 !important;
   }
 
+  .icon {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   button, a {
     font-size: 10pt !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   h1 {
@@ -133,8 +140,4 @@
   #resume-content {
     padding: 0.5in !important;
   }
-}
-
-.pdf-mode .print-pdf\:text-black {
-  color: black !important;
 }

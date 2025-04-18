@@ -32,7 +32,7 @@ export function DownloadPDFButton({ contentId, buttonText, filename }: DownloadP
       }
 
       // Add PDF mode class for styling
-      element.classList.add("pdf-mode")
+      document.body.classList.add("pdf-mode")
 
       // Configure options
       const opt = {
@@ -47,7 +47,7 @@ export function DownloadPDFButton({ contentId, buttonText, filename }: DownloadP
       await html2pdf().set(opt).from(element).save()
 
       // Remove PDF mode class
-      element.classList.remove("pdf-mode")
+      document.body.classList.remove("pdf-mode")
     } catch (error) {
       console.error("Error generating PDF:", error)
     }

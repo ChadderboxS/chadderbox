@@ -1,9 +1,9 @@
 import { Nav } from "@/components/nav"
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ProtectedEmail, ProtectedPhone, LinkedInLink } from "@/components/protected-contact"
 import { ContactForm } from "@/components/contact-form"
+import { Footer } from "@/components/Footer"
 
 export default function ContactPage() {
   return (
@@ -56,17 +56,7 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Chad Stilwell. All rights reserved.</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Privacy
-          </Link>
-        </nav>
-      </footer>
+      <Footer />
     </div>
   )
 }

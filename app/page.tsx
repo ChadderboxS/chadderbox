@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { LetterToNextTeam } from "@/components/Letter"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
+import { Footer } from "@/components/Footer"
 
 export default function Home() {
   return (
@@ -36,16 +37,13 @@ export default function Home() {
                 {/* Profile Image - Replace with your actual image */}
                 <div className="relative w-64 h-64 mx-auto overflow-hidden rounded-full border-4 border-gray-200 shadow-lg">
                   <Image
-                    src="/images/profile-placeholder.jpg"
+                    src="/images/profile_picture.jpg"
                     alt="Chad Stilwell"
                     fill
                     style={{ objectFit: "cover" }}
                     priority
                   />
                 </div>
-                <p className="text-xs text-center text-gray-500 mt-2">
-                  Place your profile photo at /public/images/profile-placeholder.jpg
-                </p>
               </div>
             </div>
           </div>
@@ -92,17 +90,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Chad Stilwell. All rights reserved.</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Privacy
-          </Link>
-        </nav>
-      </footer>
+      <Footer />
     </div>
   )
 }

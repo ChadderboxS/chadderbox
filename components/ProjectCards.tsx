@@ -4,6 +4,7 @@ export interface ProjectCardData {
   description: string;
   image: string;
   link: string;
+  disabled: boolean;
 }
 
 export const Projects: ProjectCardData[] = [
@@ -11,8 +12,9 @@ export const Projects: ProjectCardData[] = [
     id: 1,
     title: 'GAME: Tenzies!',
     description: 'Roll all 10 dice until all dice are the same.',
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/images/tenzies-thumbnail.jpg?height=200&width=300",
     link: '@/projects/tenzies',
+    disabled: false,
   },  
   {
     id: 2,
@@ -20,6 +22,7 @@ export const Projects: ProjectCardData[] = [
     description: "A brief description of Project 2",
     image: "/placeholder.svg?height=200&width=300",
     link: "https://github.com/yourusername/project2",
+    disabled: true,
   },
   {
     id: 3,
@@ -27,5 +30,6 @@ export const Projects: ProjectCardData[] = [
     description: "A brief description of Project 3",
     image: "/placeholder.svg?height=200&width=300",
     link: "https://github.com/yourusername/project3",
+    disabled: true,
   },
 ];

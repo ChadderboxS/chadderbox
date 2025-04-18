@@ -5,8 +5,11 @@ import { Mail, Phone, Linkedin, Globe } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 
 interface ProtectProps {
-override?: boolian;
+override?: boolean;
 }
+
+const iconClassName = "icon h-5 w-5"
+const containerClassName = "inline-flex items-center gap-x-2"
 
 // Email protection component
 export function ProtectedEmail({ override = false }: ProtectProps) {
@@ -45,8 +48,8 @@ export function ProtectedEmail({ override = false }: ProtectProps) {
   }
 
   return (
-    <div className="flex items-center space-x-2">
-      <Mail className="h-4 w-4 flex-shrink-0" />
+    <div className={containerClassName}>
+      <Mail className={iconClassName} />
       <button
         onClick={handleClick}
         className="text-base hover:underline focus:outline-none"
@@ -93,8 +96,8 @@ export function ProtectedPhone({ override = false }: ProtectProps) {
   }
 
   return (
-    <div className="flex items-center">
-      <Phone className="h-4 w-4 mr-2" />
+    <div className={containerClassName}>
+      <Phone className={iconClassName} />
       <button
         onClick={handleClick}
         className="text-left hover:underline focus:outline-none"
@@ -109,8 +112,8 @@ export function ProtectedPhone({ override = false }: ProtectProps) {
 // LinkedIn component (not obfuscated since it's public anyway)
 export function LinkedInLink() {
   return (
-    <div className="flex items-center">
-      <Linkedin className="h-4 w-4 mr-2" />
+    <div className={containerClassName}>
+      <Linkedin className={iconClassName} />
       <a
         href="https://linkedin.com/in/chad-stilwell"
         target="_blank"
@@ -123,11 +126,12 @@ export function LinkedInLink() {
   )
 }
 
+
 // Personal Site component (not obfuscated since it's public anyway)
 export function PersonalLink() {
   return (
-    <div className="flex items-center">
-      <Globe className="h-4 w-4 mr-2" />
+    <div className={containerClassName}>
+      <Globe className={iconClassName} />
       <a
         href="https://www.chadstilwell.com"
         target="_blank"

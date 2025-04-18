@@ -1,8 +1,8 @@
 import { Nav } from "@/components/nav"
 import Link from "next/link"
 import { ProtectedEmail, ProtectedPhone, LinkedInLink, PersonalLink } from "@/components/protected-contact"
-import { PDFGenerator } from "@/components/pdf-generator"
 import { DownloadPDFButton } from '@/components/DownloadPDFButton'
+import { Footer } from "@/components/Footer"
 
 export default function ResumePage() {
   return (
@@ -11,24 +11,24 @@ export default function ResumePage() {
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
-            <div id="resume-content" className="print:shadow-none print-pdf:text-black print-pdf:block">
+            <div id="resume-content" className="print:shadow-none print-pdf:text-black">
               <div className="flex flex-col md:flex-row justify-between items-start mb-8">
                 <div>
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
                     Chad Stilwell
                   </h1>
                   <p className="text-xl text-gray-500 mt-2">Technology Executive | CTO | AI & Data Science Leader</p>
+                  <div className="hidden mt-2 flex-col space-x-2 print-pdf:block print-pdf:black-text">
+                    <ProtectedPhone override={true} />
+                    <ProtectedEmail override={true} />
+                    <LinkedInLink />
+                    <PersonalLink />
+                  </div>
                 </div>
-                <div className="mt-4 print-pdf:hidden md:mt-0 space-y-2">
+                <div className="flex flex-col mt-4 print-pdf:hidden md:mt-0 space-y-2">
                   <ProtectedPhone />
                   <ProtectedEmail />
                   <LinkedInLink />
-                </div>
-                <div className="hidden print-pdf:block print-pdf:black-text mt-4 md:mt-0 space-y-2">
-                  <ProtectedPhone override={true} />
-                  <ProtectedEmail override={true} />
-                  <LinkedInLink />
-                  <PersonalLink />
                 </div>
               </div>
 
@@ -46,46 +46,31 @@ export default function ResumePage() {
 
                 <div>
                   <h2 className="text-2xl font-semibold mb-4">Key Skills</h2>
-                  <ul className="grid grid-cols-1 md:grid-cols-1 gap-2">
-                    <li className="flex items-start">
-                      <span className="font-semibold mr-2">Strategic Leadership –</span>
+                  <ul className="mt-2 space-y-1">
+                    <li className="leading-relaxed">
+                      <span className="font-semibold mr-2">Strategic Leadership –</span> 
                       <span>Drives vision and innovation that aligns IT strategy with business objectives.</span>
                     </li>
-                    <li className="flex items-start">
+                    <li className="leading-relaxed">
                       <span className="font-semibold mr-2">Team & Culture Development –</span>
                       <span>Nurtures a dynamic problem-solving atmosphere with remarkably low turnover rates.</span>
                     </li>
-                    <li className="flex items-start">
+                    <li className="leading-relaxed">
                       <span className="font-semibold mr-2">AI & Data Science Expertise –</span>
-                      <span>
-                        Leads AI-driven product development, leveraging machine learning and generative AI models.
-                      </span>
+                      <span>Leads AI-driven product development, leveraging machine learning and generative AI models.</span>
                     </li>
-                    <li className="flex items-start">
+                    <li className="leading-relaxed">
                       <span className="font-semibold mr-2">Decision-Making & Execution –</span>
                       <span>Balances rapid execution with long-term vision.</span>
                     </li>
-                    <li className="flex items-start">
+                    <li className="leading-relaxed">
                       <span className="font-semibold mr-2">Operational Efficiency –</span>
                       <span>Spearheads transformations that improve scalability and profitability.</span>
                     </li>
-                    <li className="flex items-start">
+                    <li className="leading-relaxed">
                       <span className="font-semibold mr-2">Security & Compliance –</span>
                       <span>Maintained several years of unblemished SOC 2 Type 2 reports.</span>
                     </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h2 className="text-2xl font-semibold mb-4">Awards & Recognition</h2>
-                  <ul className="list-disc pl-6 space-y-1">
-                    <li>Emerging Company CIO/CTO of the Year (2024, Tech Titans)</li>
-                    <li>40 Under 40 (2024, Auto Remarketing)</li>
-                    <li>
-                      Two-time CEO Quarterly Excellence Award recipient for outstanding contributions to business
-                      strategy and operational efficiency. (Alcon)
-                    </li>
-                    <li>Top 10 Startups (2024, LinkedIn News, Dallas, TX)</li>
                   </ul>
                 </div>
 
@@ -201,26 +186,30 @@ export default function ResumePage() {
                     <p>Bachelor of Business Administration (BBA) – Business Information Systems</p>
                   </div>
                 </div>
+
+                <div>
+                  <h2 className="text-2xl font-semibold mb-4">Awards & Recognition</h2>
+                  <ul className="list-disc pl-6 space-y-1">
+                    <li>Emerging Company CIO/CTO of the Year (2024, Tech Titans)</li>
+                    <li>40 Under 40 (2024, Auto Remarketing)</li>
+                    <li>
+                      Two-time CEO Quarterly Excellence Award recipient for outstanding contributions to business
+                      strategy and operational efficiency. (Alcon)
+                    </li>
+                    <li>Top 10 Startups (2024, LinkedIn News, Dallas, TX)</li>
+                  </ul>
+                </div>
+
               </div>
             </div>
 
             <div className="mt-8">
-              <DownloadPDFButton contentId="resume-content" buttonText="Download Resume [PDF]" filename="chad_stilwell_resume.pdf" />
+              <DownloadPDFButton contentId="resume-content" buttonText="Download Resume (PDF)" filename="chad_stilwell_resume.pdf" />
             </div>
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Chad Stilwell. All rights reserved.</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Privacy
-          </Link>
-        </nav>
-      </footer>
+      <Footer />
     </div>
   )
 }
