@@ -13,7 +13,7 @@ export const Projects: ProjectCardData[] = [
     title: 'GAME: Tenzies!',
     description: 'Roll all 10 dice until all dice are the same.',
     image: "/images/tenzies-thumbnail.jpg?height=200&width=300",
-    link: '@/projects/tenzies',
+    link: '/projects/tenzies',
     disabled: false,
   },  
   {
