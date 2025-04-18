@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/projects/tenzies(/.*)?",
-      "destination": "https://v0-tenzies-git-main-chadder-box-projects.vercel.app/$1"
+      "source": "/projects/tenzies/:path*",
+      "destination": "https://v0-tenzies-git-main-chadder-box-projects.vercel.app/:path*"
     }
   ]
 }
