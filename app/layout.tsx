@@ -6,6 +6,7 @@ import "./globals.css"
 import { ThemeWrapper } from '@/components/ThemeWrapper'
 import { Toaster } from "@/components/toaster"
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <ThemeWrapper>
           {children}
           <Analytics />
+          <SpeedInsights />
           <Toaster />
         </ThemeWrapper>
       </body>
