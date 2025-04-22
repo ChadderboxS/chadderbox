@@ -16,7 +16,7 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-50 px-4 bg-background shadow lg:px-6 h-14 flex items-center">
-      <Link className="flex items-center justify-center" href="#">
+      <Link className="flex items-center justify-center" href="/">
         <span className="font-bold">Chad Stilwell</span>
       </Link>
       <nav className="ml-auto flex gap-4 sm:gap-6">
