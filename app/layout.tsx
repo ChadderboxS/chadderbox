@@ -5,6 +5,7 @@ import "./globals.css"
 // import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeWrapper } from '@/components/ThemeWrapper'
 import { Toaster } from "@/components/toaster"
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeWrapper>
           {children}
+          <Analytics />
           <Toaster />
         </ThemeWrapper>
       </body>
