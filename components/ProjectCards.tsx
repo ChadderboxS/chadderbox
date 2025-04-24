@@ -4,25 +4,27 @@ export interface ProjectCardData {
   description: string;
   image: string;
   link: string;
+  technologies?: string[];
   disabled: boolean;
 }
 
 export const Projects: ProjectCardData[] = [
   {
     id: 1,
-    title: 'GAME: Tenzies!',
-    description: 'Roll all 10 dice until all dice are the same.',
+    title: "GAME: Tenzies!",
+    description: "Roll all 10 dice until all dice are the same.",
     image: "/images/tenzies-thumbnail.jpg?height=200&width=300",
-    link: '/projects/tenzies',
+    link: "/projects/tenzies",
     disabled: false,
-  },  
+  },
   {
     id: 2,
-    title: "Project 2",
-    description: "A brief description of Project 2",
-    image: "/placeholder.svg?height=200&width=300",
-    link: "https://github.com/yourusername/project2",
-    disabled: true,
+    title: "Meme Generator",
+    description: "Create custom memes w/ popular images or your own.",
+    image: "/images/meme-generator-tumbnail.jpg?height=200&width=300",
+    technologies: ["React", "CSS", "JavaScript"],
+    link: "/projects/meme-generator",
+    disabled: false,
   },
   {
     id: 3,

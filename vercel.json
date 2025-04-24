@@ -3,6 +3,10 @@
     {
       "source": "/projects/tenzies/:path*",
       "destination": "https://v0-tenzies-git-main-chadder-box-projects.vercel.app/:path*"
+    },
+    {
+      "source": "/projects/meme-generator/:path*",
+      "destination": "https://meme-generator-v0.vercel.app/:path*"
     }
   ]
 }
