@@ -1,11 +1,13 @@
-import { Nav } from "@/components/nav"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { ArrowLeft, ExternalLink } from "lucide-react"
-import { Footer } from "@/components/Footer"
+import { Nav } from "@/components/nav";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import { GitHubLink } from "@/components/protected-contact"
+import { Projects } from "@/components/ProjectCards"
 
-export default function TenziesPage() {
+export default function MemeGeneratorPage() {
+  const projectIndex = 0; // Index of the project in the Projects array
   return (
     <div className="flex flex-col min-h-screen">
       <Nav />
@@ -20,29 +22,33 @@ export default function TenziesPage() {
                     <span className="sr-only">Back to Projects</span>
                   </Link>
                 </Button>
-                <h1 className="text-3xl font-bold">Tenzies Game</h1>
+                <h1 className="text-3xl font-bold">{Projects[projectIndex].title}</h1>
               </div>
 
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="md:w-1/3 space-y-4">
                   <Card className="p-6">
-                    <h2 className="text-xl font-semibold mb-2">About This Project</h2>
+                    <h2 className="text-xl font-semibold mb-2">
+                      About This Project
+                    </h2>
                     <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      Tenzies is a dice game where the goal is to get all dice showing the same number. Click each die
-                      to freeze it at its current value between rolls.
+                      {Projects[projectIndex].descriptionLong ? Projects[projectIndex].descriptionLong : Projects[projectIndex].description}
                     </p>
                     <div className="space-y-2">
                       <h3 className="font-medium">Technologies Used:</h3>
                       <ul className="list-disc pl-5 space-y-1">
-                        <li>React</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
+                        {Projects[projectIndex]?.technologies?.map((tech: string, idx: number) => (
+                          <li key={idx}>{tech}</li>
+                        ))}
                       </ul>
+                    </div>
+                    <div className="space-y-4 mt-6">
+                      <GitHubLink href={Projects[projectIndex].github}/>
                     </div>
                     <div className="mt-6">
                       <Button asChild>
                         <a
-                          href="https://v0-tenzies-git-main-chadder-box-projects.vercel.app"
+                          href={Projects[projectIndex].iframe}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center gap-2"
@@ -59,10 +65,10 @@ export default function TenziesPage() {
                   <div className="relative w-full rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg bg-white dark:bg-gray-950">
                     <div className="aspect-[16/9] w-full">
                       <iframe
-                        src="https://v0-tenzies-git-main-chadder-box-projects.vercel.app"
+                        src={Projects[projectIndex].iframe}
                         className="w-full h-full"
                         style={{ minHeight: "600px" }}
-                        title="Tenzies Game"
+                        title={Projects[projectIndex].title}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                       />
@@ -74,7 +80,19 @@ export default function TenziesPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+        <p className="text-xs text-gray-500 dark:text-gray-400">
+          © 2024 Chad Stilwell. All rights reserved.
+        </p>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+          <Link className="text-xs hover:underline underline-offset-4" href="#">
+            Terms of Service
+          </Link>
+          <Link className="text-xs hover:underline underline-offset-4" href="#">
+            Privacy
+          </Link>
+        </nav>
+      </footer>
     </div>
-  )
+  );
 }

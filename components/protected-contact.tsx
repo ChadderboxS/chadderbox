@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Mail, Phone, Linkedin, Globe } from "lucide-react"
+import { Mail, Phone, Linkedin, Globe, Github } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 
 interface ProtectProps {
@@ -121,6 +121,27 @@ export function LinkedInLink() {
         className="hover:underline"
       >
         linkedin.com/in/chad-stilwell
+      </a>
+    </div>
+  )
+}
+
+// GitHub component (not obfuscated since it's public anyway)
+interface GitHubLinkProps {
+  href?: string
+}
+
+export function GitHubLink({ href = "https://github.com/ChadderboxS" }: GitHubLinkProps) {
+  return (
+    <div className={containerClassName}>
+      <Github className={iconClassName} />
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:underline"
+      >
+        {href.replace(/^https?:\/\//, "")}
       </a>
     </div>
   )

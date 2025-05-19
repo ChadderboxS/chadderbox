@@ -1,6 +1,6 @@
 import { Nav } from "@/components/nav"
 import Link from "next/link"
-import { ProtectedEmail, ProtectedPhone, LinkedInLink, PersonalLink } from "@/components/protected-contact"
+import { ProtectedEmail, ProtectedPhone, LinkedInLink, PersonalLink, GitHubLink } from "@/components/protected-contact"
 import { DownloadPDFButton } from '@/components/DownloadPDFButton'
 import { Footer } from "@/components/Footer"
 
@@ -22,6 +22,7 @@ export default function ResumePage() {
                     <ProtectedPhone override={true} />
                     <ProtectedEmail override={true} />
                     <LinkedInLink />
+                    <GitHubLink />
                     <PersonalLink />
                   </div>
                 </div>
@@ -29,6 +30,7 @@ export default function ResumePage() {
                   <ProtectedPhone />
                   <ProtectedEmail />
                   <LinkedInLink />
+                  <GitHubLink />
                 </div>
               </div>
 
@@ -36,11 +38,11 @@ export default function ResumePage() {
                 <div>
                   <h2 className="text-2xl font-semibold mb-4">Professional Summary</h2>
                   <p>
-                    Innovative and results-driven technology executive with a proven track record of driving growth and
-                    scaling startups. Expertise in IT strategy, AI-driven product development, and team building.
-                    Recognized for delivering cutting-edge solutions, leading high-impact teams, and influencing
-                    industry advancements. Adept at fostering a culture of innovation and executing strategic
-                    initiatives that drive profitability and operational excellence.
+                    Innovative and results-driven product & technology executive with a proven track record of driving growth 
+                    and scaling startups. Blends strategic leadership with hands-on technical expertise—equally comfortable setting 
+                    vision and jumping into the code to solve complex problems alongside the team. Skilled in IT strategy, product 
+                    development, AI, and high-performing team building. Known for delivering cutting-edge solutions, leading 
+                    impactful initiatives, and fostering a culture of ownership, innovation, and executional excellence.
                   </p>
                 </div>
 
@@ -57,7 +59,7 @@ export default function ResumePage() {
                     </li>
                     <li className="leading-relaxed">
                       <span className="font-semibold mr-2">AI & Data Science Expertise –</span>
-                      <span>Leads AI-driven product development, leveraging machine learning and generative AI models.</span>
+                      <span>Develop AI-driven products, leveraging machine learning and generative AI models.</span>
                     </li>
                     <li className="leading-relaxed">
                       <span className="font-semibold mr-2">Decision-Making & Execution –</span>
@@ -85,12 +87,12 @@ export default function ResumePage() {
 
                       <div className="mt-2 ml-0 md:ml-4">
                         <div className="flex flex-col md:flex-row md:justify-between">
-                          <h4 className="text-lg font-medium">Chief Technology Officer</h4>
+                          <h4 className="text-lg font-medium">Chief Product & Technology Officer</h4>
                           <p className="text-gray-500">July 2021 - February 2025</p>
                         </div>
                         <ul className="list-disc pl-6 mt-2 space-y-1">
                           <li>
-                            Led AI-driven product development and IT strategy, pioneering patent-pending AI technology.
+                            Led product development, IT strategy, and go to market strategy, pioneering patent-pending AI technology.
                           </li>
                           <li>
                             Scaled the company from 15 employees to over 100, generating $50M in revenue and achieving
@@ -101,7 +103,7 @@ export default function ResumePage() {
                           </li>
                           <li>
                             Directed and guided the product team to ensure alignment with business strategy and
-                            technological advancements.
+                            technological advancements and bring new products to market.
                           </li>
                           <li>
                             Led IT security initiatives, achieving multiple years with a clean SOC 2 Type 2 report.
@@ -180,6 +182,86 @@ export default function ResumePage() {
                 </div>
 
                 <div>
+                  <h2 className="text-2xl font-semibold mb-4">Technical Experience Highlights</h2>
+                  <div className="space-y-6">
+                    <div>
+
+                      <div className="mt-2 ml-0 md:ml-4">
+                        <div className="flex flex-col md:flex-row md:justify-between">
+                          <h4 className="text-lg font-medium">AI-Driven SaaS & Cloud Architecture</h4>
+                        </div>
+                        <ul className="list-disc pl-6 mt-2 space-y-1">
+                          <li>
+                            Built a <strong>multi-tenant SaaS platform</strong> on <strong>PostgreSQL with Row-Level Security (RLS)</strong> and a unified schema, 
+                            enforcing tenant isolation at the database layer. Optimized performance with tenant-aware indexing 
+                            and automated onboarding through dynamic RLS policy generation.
+                          </li>
+                          <li>
+                            Integrated Auth0 for authentication and tenant management, using JWTs, Organizations, 
+                            and role-based access control (RBAC) to securely resolve tenant context and enforce GraphQL API access policies.
+                          </li>
+                          <li>
+                            Deployed across AWS cloud infrastructure, using Docker containers on ECS for scalable microservices, CloudFormation 
+                            for infrastructure as code, and services like Lambda, S3, RDS, and API Gateway. Implemented automated 
+                            CI/CD pipelines with CircleCI and achieved 90% test coverage across services, including Playwright-based 
+                            front-end testing, ensuring high reliability and fast, scalable deployments.
+                          </li>
+                          <li>
+                            Built APIs using .NET, Python, and Go, selecting the optimal stack for performance, integration, and data science alignment.
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="mt-4 ml-0 md:ml-4">
+                        <div className="flex flex-col md:flex-row md:justify-between">
+                          <h4 className="text-lg font-medium">Applied Machine Learning & Predictive Modeling</h4>
+                        </div>
+                        <ul className="list-disc pl-6 mt-2 space-y-1">
+                          <li>
+                            Architected and developed an AI-powered auto loan desking tool that dynamically guided 
+                            dealers to optimize loan structures using predictive models—minimizing monthly payments, 
+                            term lengths, and loan-to-value ratios while maximizing dealer profitability.
+                          </li>
+                          <li>
+                            Built an ML-infused Monte Carlo engine in Python and .NET to forecast loan performance 
+                            at the individual level by payment period, achieving {'>'}98% MAE across multiple years 
+                            of securitized loan data.
+                          </li>
+                          <li>
+                            Engineered AI agents to generate narrative explanations and interactive chart-based 
+                            walkthroughs, enabling end users to interpret program logic and data behavior with minimal training.
+                          </li>
+                          <li>
+                            Engineered GenAI platform that integrates LLMs and vision models to generate 
+                            personalized children's books from user-submitted likenesses and story prompts. 
+                            Designed and built custom pipelines for natural language generation, image synthesis, 
+                            and end-to-end story assembly.
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="mt-4 ml-0 md:ml-4">
+                        <div className="flex flex-col md:flex-row md:justify-between">
+                          <h4 className="text-lg font-medium">Front-End Engineering & UX</h4>
+                        </div>
+                        <ul className="list-disc pl-6 mt-2 space-y-1">
+                          <li>
+                            Built responsive, Atomic Design-based component systems using Next.js, TailwindCSS, 
+                            and ShadCN, aligned to modern headless UI patterns for performance and accessibility.
+                          </li>
+                          <li>
+                            Integrated AI SDKs to support real-time interactions and data storytelling experiences 
+                            across web applications.
+                          </li>
+                        </ul>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+                <div>
                   <h2 className="text-2xl font-semibold mb-4">Education</h2>
                   <div>
                     <h3 className="text-lg font-medium">Texas Christian University (2008)</h3>
@@ -204,7 +286,13 @@ export default function ResumePage() {
             </div>
 
             <div className="mt-8">
-              <DownloadPDFButton contentId="resume-content" buttonText="Download Resume (PDF)" filename="chad_stilwell_resume.pdf" />
+              <a
+                href="/CV_Chad_Stilwell.pdf"
+                download
+                className="inline-block px-4 py-2 mr-4 mb-2 text-white bg-blue-600 rounded hover:bg-blue-700 transition-colors duration-150"
+              >
+                Download Resume (PDF)
+              </a>
             </div>
           </div>
         </section>

@@ -20,7 +20,7 @@ export default function Home() {
                 </h1>
                 <p className="text-xl text-gray-500">Technology Executive | CTO | AI & Data Science Leader</p>
                 <p className="text-gray-500 md:text-lg">
-                  Innovative and results-driven technology executive with a proven track record of driving growth and
+                  Innovative, hands-on, and results-driven technology executive with a proven track record of driving growth and
                   scaling companies through people, products, and innovative technology.
                 </p>
                 <div className="flex flex-wrap gap-4">

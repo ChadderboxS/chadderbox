@@ -1,7 +1,7 @@
 import { Nav } from "@/components/nav"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
-import { ProtectedEmail, ProtectedPhone, LinkedInLink } from "@/components/protected-contact"
+import { ProtectedEmail, ProtectedPhone, LinkedInLink, GitHubLink } from "@/components/protected-contact"
 import { ContactForm } from "@/components/contact-form"
 import { Footer } from "@/components/Footer"
 
@@ -40,6 +40,13 @@ export default function ContactPage() {
                         <div className="ml-8">
                           <p className="font-medium">LinkedIn</p>
                           <LinkedInLink />
+                        </div>
+                      </div>
+
+                      <div className="flex items-center">
+                        <div className="ml-8">
+                          <p className="font-medium">GitHub</p>
+                          <GitHubLink />
                         </div>
                       </div>
                     </div>

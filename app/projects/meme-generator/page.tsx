@@ -3,8 +3,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, ExternalLink } from "lucide-react";
+import { GitHubLink } from "@/components/protected-contact"
+import { Projects } from "@/components/ProjectCards"
 
 export default function MemeGeneratorPage() {
+  const projectIndex = 1; // Index of the project in the Projects array
   return (
     <div className="flex flex-col min-h-screen">
       <Nav />
@@ -19,7 +22,7 @@ export default function MemeGeneratorPage() {
                     <span className="sr-only">Back to Projects</span>
                   </Link>
                 </Button>
-                <h1 className="text-3xl font-bold">Meme Generator</h1>
+                <h1 className="text-3xl font-bold">{Projects[projectIndex].title}</h1>
               </div>
 
               <div className="flex flex-col md:flex-row gap-6">
@@ -29,23 +32,23 @@ export default function MemeGeneratorPage() {
                       About This Project
                     </h2>
                     <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      The Meme Generator allows you to create custom memes by
-                      adding text to popular meme templates. Select an image,
-                      add your text, and generate your own personalized meme.
+                      {Projects[projectIndex].descriptionLong ? Projects[projectIndex].descriptionLong : Projects[projectIndex].description}
                     </p>
                     <div className="space-y-2">
                       <h3 className="font-medium">Technologies Used:</h3>
                       <ul className="list-disc pl-5 space-y-1">
-                        <li>React</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Meme API</li>
+                        {Projects[projectIndex]?.technologies?.map((tech: string, idx: number) => (
+                          <li key={idx}>{tech}</li>
+                        ))}
                       </ul>
+                    </div>
+                    <div className="space-y-4 mt-6">
+                      <GitHubLink href={Projects[projectIndex].github}/>
                     </div>
                     <div className="mt-6">
                       <Button asChild>
                         <a
-                          href="https://meme-generator-v0.vercel.app"
+                          href={Projects[projectIndex].iframe}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center gap-2"
@@ -62,10 +65,10 @@ export default function MemeGeneratorPage() {
                   <div className="relative w-full rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg bg-white dark:bg-gray-950">
                     <div className="aspect-[16/9] w-full">
                       <iframe
-                        src="https://meme-generator-v0.vercel.app"
+                        src={Projects[projectIndex].iframe}
                         className="w-full h-full"
                         style={{ minHeight: "600px" }}
-                        title="Meme Generator"
+                        title={Projects[projectIndex].title}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                       />
